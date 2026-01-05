@@ -18,6 +18,7 @@ Windows Python 개발 환경 템플릿입니다. **오프라인 설치**를 지�
 | uvicorn | ASGI server for FastAPI |
 | pyautogui | GUI automation |
 | jupyterlab | Interactive development environment |
+| pyrfc | SAP NetWeaver RFC SDK bindings |
 
 ## Quick Start
 
@@ -72,24 +73,22 @@ pip install --no-index --find-links=wheels -r requirements.txt
 
 ## Note: pyrfc Package
 
-The `pyrfc` package requires **SAP NetWeaver RFC SDK** which must be obtained separately from SAP.
+The `pyrfc` wheel is included in this repository. However, it requires **SAP NetWeaver RFC SDK** runtime to function.
 
-### Installation Steps for pyrfc:
-1. Download SAP NetWeaver RFC SDK from SAP Support Portal
-2. Extract and set environment variables:
+### SAP RFC SDK Setup (Required for pyrfc):
+1. Download SAP NetWeaver RFC SDK from [SAP Support Portal](https://support.sap.com/nwrfcsdk) (SAP Note 2573790)
+2. Extract to `C:\nwrfcsdk`
+3. Add to system PATH or set environment variable:
    ```cmd
    set SAPNWRFC_HOME=C:\nwrfcsdk
    ```
-3. Install pyrfc:
-   ```cmd
-   pip install pyrfc
-   ```
+4. Install Visual C++ Redistributable for Visual Studio 2013 (required)
 
 ## Project Structure
 
 ```
 python-basic/
-├── wheels/              # Offline package files (130 packages)
+├── wheels/              # Offline package files (131 packages)
 ├── venv/                # Virtual environment (auto-generated)
 ├── requirements.txt     # Package dependencies
 ├── setup.bat           # Windows batch setup script
